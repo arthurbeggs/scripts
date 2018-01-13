@@ -11,10 +11,10 @@ cd ~/Downloads/Install
 # Updating Headers and Essential Libs
 echo -e "\e[33mGetting Essential Stuff ...\e[0m"
 sudo apt-get update -y
+sudo apt-get upgrade -y
 sudo apt-get install build-essential -y
-# sudo apt-get install mesa-utils -y
-# sudo apt-get install gnome-schedule -y
-# sudo apt-get install subversion autoconf exifprobe automake build-essential libass-dev libfreetype6-dev libsdl1.2-dev libtheora-dev libtool libva-dev libvdpau-dev libvorbis-dev libxcb1-dev libxcb-shm0-dev libxcb-xfixes0-dev gdb pkg-config texinfo zlib1g-dev htop -y
+sudo apt-get install mesa-utils -y
+sudo apt-get install git subversion autoconf exifprobe automake libass-dev libfreetype6-dev libsdl1.2-dev libtheora-dev libtool libva-dev libvdpau-dev libvorbis-dev libxcb1-dev libxcb-shm0-dev libxcb-xfixes0-dev gdb pkg-config texinfo zlib1g-dev htop -y
 # For better audio control
 # sudo apt-get install pulseaudio pavucontrol -y
 echo -e "\e[32m[OK] Essential Stuff \e[0m"
@@ -30,8 +30,6 @@ apt-get install -y curl
 # sudo apt-get -y install numlockx
 ### TODO: Falta comando de ativação!
 
-# sudo nano /etc/gdm3/Init/Default
-
 
 ##### NOT SUPPORTED!
 # # AMD GPU Driver
@@ -43,14 +41,6 @@ apt-get install -y curl
 # # Radeon Open Compute
 # sudo apt install -y rocm-amdgpu-pro
 # echo 'export LLVM_BIN=/opt/amdgpu-pro/bin' | sudo tee /etc/profile.d/amdgpu-pro.sh
-
-
-
-
-### GNOME Tweak Tool
-wget https://launchpad.net/ubuntu/+archive/primary/+files/gnome-tweak-tool_3.25.2-0ubuntu1_all.deb -O gnome-tweak-tool.deb
-sudo dpkg -i gnome-tweak-tool.deb
-sudo apt-get install -f
 
 
 
@@ -125,13 +115,17 @@ sudo gem install sass --no-user-install
 sudo -H npm install -g less
 
 # LaTeX
-sudo apt-get install -y texlive
+sudo apt-get install -y texlive-full
 
 # Kotlin
 curl -s "https://get.sdkman.io" | bash
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 sdk install kotlin
 
+#Io
+wget http://iobin.suspended-chord.info/linux/iobin-linux-x64-deb-current.zip -O iolang.zip
+unzip iolang.zip
+sudo gdebi IoLanguage-2013.11.04-Linux-x64.deb
 
 
 ### Futuramente Scala, Clojure, Erlang, Lisp, Racket...
@@ -235,6 +229,16 @@ install_c_kernel
 ### KMV qemu
 
 
+### Azure CLI
+echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ wheezy main" | sudo tee /etc/apt/sources.list.d/azure-cli.list
+sudo apt-key adv --keyserver packages.microsoft.com --recv-keys 417A0893
+sudo apt-get install apt-transport-https
+sudo apt-get update && sudo apt-get install azure-cli
+
+
+### AWS CLI
+pip install awscli
+
 
 
 ###
@@ -246,7 +250,7 @@ echo -e "\e[32m[OK] GIMP \e[0m"
 # Instalar Inkscape
 sudo add-apt-repository ppa:inkscape.dev/stable
 sudo apt-get update
-sudo apt-get install inkscape
+sudo apt-get install inkscape -y
 
 
 ################
@@ -267,11 +271,6 @@ apm disable autocomplete-paths build busy busy-signal color-picker figlet git-pl
 
 ### Deluge Torrent Client
 sudo apt-get install deluge
-# Definir Deluge como handler de magnet links
-gvfs-mime --set x-scheme-handler/magnet deluge.desktop
-
-
-### Foxit Reader
 
 
 ### Stacer
@@ -334,9 +333,6 @@ wget http://download.teamviewer.com/download/teamviewer_i386.deb -O teamviewer.d
 sudo dpkg -i teamviewer.deb
 sudo apt-get install -f -y
 
-
-### Seahorse certificate keyring (bug com chaves GPG importadas)
-sudo apt-get install -y seahorse seahorse-nautilus seahorse-daemon seahorse-sharing
 
 sudo apt-get install libsecret-1-0 libsecret-1-dev
 cd /usr/share/doc/git/contrib/credential/libsecret
