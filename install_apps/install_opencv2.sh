@@ -3,11 +3,17 @@
 ################################################################################
 ###                       OpenCV2 Installation Script                        ###
 ################################################################################
-
-### Single line script will download and run this gist automatically:
-# curl -s "https://gist.githubusercontent.com/arthurbeggs/06df46af94af7f261513934e56103b30/raw/b751ab4f720aee01a7be08a20289b400c86b526d/install_opencv2_ubuntu.sh" | bash
-
+#            Source code at https://github.com/arthurbeggs/scripts             #
 ################################################################################
+#                                                                              #
+#     Feel free to copy and modify this file. Giving me credit for it is your  #
+# choice, but please keep references to other people's work, which I don't     #
+# have ownership and thus cannot decide what to do with the licenses.          #
+#                                                                              #
+################################################################################
+
+### Single line script will download and run this script automatically:
+# curl -s "https://raw.githubusercontent.com/arthurbeggs/scripts/master/install_apps/install_opencv2.sh" | bash
 
 
 ### Dependencies

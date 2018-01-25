@@ -3,6 +3,9 @@
 ################################################################################
 ###                  Xubuntu 16.04 - Notebook Configuration                  ###
 ################################################################################
+#            Source code at https://github.com/arthurbeggs/scripts             #
+################################################################################
+#                                                                              #
 #     This script was inspired by Jessé Barreto's configuration script         #
 # available at https://github.com/jessebarreto/ConfigureWorkspace              #
 #                                                                              #
@@ -179,7 +182,7 @@ sdk install kotlin
 ### Io
 wget http://iobin.suspended-chord.info/linux/iobin-linux-x64-deb-current.zip -O iolang.zip
 unzip iolang.zip
-sudo gdebi IoLanguage-2013.11.04-Linux-x64.deb
+yes | sudo gdebi IoLanguage-2013.11.04-Linux-x64.deb
 
 
 ### Prolog
@@ -336,12 +339,13 @@ cd ~/Downloads/Install
 
 
 ### OpenCV
-# curl -s "https://gist.githubusercontent.com/arthurbeggs/06df46af94af7f261513934e56103b30/raw/b751ab4f720aee01a7be08a20289b400c86b526d/install_opencv2_ubuntu.sh" | bash
-source ./install_apps/install_opencv2_ubuntu.sh
+# curl -s "https://raw.githubusercontent.com/arthurbeggs/scripts/master/install_apps/install_opencv2.sh" | bash
+source ./install_opencv2_ubuntu.sh
 
 
 ### Quartus and ModelSim
-source ./install_apps/install_quartus.sh
+# curl -s "https://raw.githubusercontent.com/arthurbeggs/scripts/master/install_apps/install_quartus.sh" | bash
+source ./install_quartus.sh
 
 
 
@@ -447,7 +451,7 @@ sudo apt-get install -y intltool itstool gir1.2-gtksource-3.0 libxml2-utils
 
 ### GitKraken
 wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
-sudo gdebi gitkraken-amd64.deb
+yes | sudo gdebi gitkraken-amd64.deb
 
 
 # TLDR manual entries
@@ -515,7 +519,7 @@ sudo adduser $USER wireshark
 
 ### Stacer
 wget https://github.com/oguzhaninan/Stacer/releases/download/v1.0.8/Stacer_1.0.8_amd64.deb
-sudo gdebi Stacer_1.0.8_amd64.deb
+yes | sudo gdebi Stacer_1.0.8_amd64.deb
 
 
 ### QDirStat
@@ -526,7 +530,7 @@ sudo apt install -y qdirstat
 
 ### Master PDF Editor
 wget http://get.code-industry.net/public/master-pdf-editor-4.3.61_qt5.amd64.deb -O master-pdf-editor.deb
-sudo gdebi master-pdf-editor.deb
+yes | sudo gdebi master-pdf-editor.deb
 
 
 ### Calibre
@@ -541,12 +545,12 @@ sudo apt-get install telegram -y
 
 ### Discord
 wget https://dl.discordapp.net/apps/linux/0.0.4/discord-0.0.4.deb
-sudo gdebi discord-0.0.4.deb
+yes | sudo gdebi discord-0.0.4.deb
 
 
 ### TeamViewer
 wget http://download.teamviewer.com/download/teamviewer_i386.deb -O teamviewer.deb
-sudo gdebi teamviewer.deb
+yes | sudo gdebi teamviewer.deb
 
 
 ### Google Drive CLI
@@ -559,7 +563,7 @@ sudo apt-get install drive -y
 ### Automation scripts available at https://gitlab.com/jean-christophe-manciot/Drive
 
 
-### Dropbox
-# wget https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb -O dropbox.deb
-# sudo gdebi dropbox.deb
-# # Change command "dropbox start -i" to "dbus-launch dropbox start" in ~/.local/share/applications/dropbox.desktop
+
+
+################################################################################
+################################################################################

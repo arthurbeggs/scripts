@@ -1,0 +1,16 @@
+[Unit]
+Description=Reveal.js Server
+
+[Service]
+#Type=simple
+WorkingDirectory=<Reveal.js path>
+User=<user>
+ExecStart=/usr/bin/npm start
+ExecStop=/usr/bin/npm stop
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=revealjs
+
+[Install]
+WantedBy=multi-user.target

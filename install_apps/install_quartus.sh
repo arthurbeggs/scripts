@@ -3,13 +3,24 @@
 ################################################################################
 ###                       Install Quartus and ModelSim                       ###
 ################################################################################
+#            Source code at https://github.com/arthurbeggs/scripts             #
+################################################################################
 #                                                                              #
 #    Based on https://github.com/jessebarreto/ConfigureWorkspace script.       #
 #                                                                              #
 #    Also based on https://wiki.archlinux.org/index.php/Altera_Design_Software #
 # and https://gist.github.com/PrieureDeSion/e2c0945cc78006b00d4206846bdb7657   #
 #                                                                              #
+#     Feel free to copy and modify this file. Giving me credit for it is your  #
+# choice, but please keep references to other people's work, which I don't     #
+# have ownership and thus cannot decide what to do with the licenses.          #
+#                                                                              #
 ################################################################################
+
+
+### Single line script will download and run this script automatically:
+# curl -s "https://raw.githubusercontent.com/arthurbeggs/scripts/master/install_apps/install_quartus.sh" | bash
+
 
 ### Preparations for Quartus and ModelSim
 sudo apt-get update
