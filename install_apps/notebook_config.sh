@@ -35,6 +35,10 @@ cd ~/Downloads/Install
 #  Essential headers, drivers and applications   #
 ##################################################
 
+### Force apt to use IPv4 protocol
+### Some repositories have problems with IPv6
+echo 'Acquire::ForceIPv4 "true";' | sudo tee /etc/apt/apt.conf.d/99force-ipv4
+
 sudo apt update -y
 sudo apt upgrade -y
 sudo apt install -y build-essential autoconf exifprobe automake libass-dev \
@@ -51,22 +55,23 @@ sudo apt update
 sudo apt install git -y
 
 
-##### NOT SUPPORTED IN 16.04!
 # ### AMD GPU Pro Driver
-# wget https://www2.ati.com/drivers/linux/ubuntu/amdgpu-pro-17.30-465504.tar.xz
-# tar -Jxvf amdgpu-pro-17.30-465504.tar.xz
-# cd amdgpu-pro-17.30-465504
-# ./amdgpu-pro-install
-#
-# ### Radeon Open Compute
-# sudo apt install -y rocm-amdgpu-pro
-# echo 'export LLVM_BIN=/opt/amdgpu-pro/bin' | sudo tee /etc/profile.d/amdgpu-pro.sh
+# wget https://www2.ati.com/drivers/linux/ubuntu/amdgpu-pro-17.50-511655.tar.xz
+# tar -Jxvf amdgpu-pro-17.50-511655.tar.xz
+# cd amdgpu-pro-17.50-511655
+# ./amdgpu-pro-install  -y --opencl=legacy
 
 
 ### Oibaf Graphic Drivers
 sudo add-apt-repository ppa:oibaf/graphics-drivers -y
+sudo apt update
 sudo apt full-upgrade -y
 sudo apt install mesa-utils -y
+
+
+### Compton Window Compositor
+sudo apt install -y compton
+curl "https://raw.githubusercontent.com/arthurbeggs/scripts/master/configuration/.compton" -o $HOME/.compton
 
 
 ### zsh
