@@ -18,7 +18,7 @@
 
 network_interface=enp1s0
 # network_interface=wlp2s0
-throttled_rate=110
+throttled_rate=110kbps
 
 
 start (){
