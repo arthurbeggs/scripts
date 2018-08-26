@@ -46,3 +46,7 @@ rm -rf base16-xfce4-terminal
 mkdir -p ~/.oh-my-zsh/custom/themes
 wget -O - https://raw.githubusercontent.com/halfo/lambda-mod-zsh-theme/master/lambda-mod.zsh-theme | tee ~/.oh-my-zsh/custom/themes/lambda-mod.zsh-theme
 
+
+### Disable NumLock Led
+# Needs to be run in a non-graphical environment (try tty1 - Ctrl + Alt + F1)
+# setleds -v -L -num

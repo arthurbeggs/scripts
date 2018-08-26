@@ -101,8 +101,8 @@ sudo apt install -y python python3 python-pip python3-pip
 ### Update python packages
 pip install --upgrade pip
 pip3 install --upgrade pip
-pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 sudo -H pip install -U
-pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 sudo -H pip3 install -U
+sudo -H pip freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 sudo -H pip install -U
+sudo -H pip3 freeze --local | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 sudo -H pip3 install -U
 # Linters
 sudo -H pip install pep8 pycodestyle
 sudo -H pip3 install pep8 pycodestyle
@@ -187,12 +187,10 @@ sdk install kotlin
 ### Io
 wget http://iobin.suspended-chord.info/linux/iobin-linux-x64-deb-current.zip -O iolang.zip
 unzip iolang.zip
-yes | sudo gdebi IoLanguage-2013.11.04-Linux-x64.deb
+yes "s" | sudo gdebi IoLanguage-2013.11.04-Linux-x64.deb
 
 
 ### Prolog
-sudo apt-add-repository ppa:swi-prolog/stable -y
-sudo apt-get update
 sudo apt-get install swi-prolog -y
 
 
@@ -456,7 +454,7 @@ sudo apt-get install -y intltool itstool gir1.2-gtksource-3.0 libxml2-utils
 
 ### GitKraken
 wget https://release.gitkraken.com/linux/gitkraken-amd64.deb
-yes | sudo gdebi gitkraken-amd64.deb
+yes "s" | sudo gdebi gitkraken-amd64.deb
 
 
 # TLDR manual entries
@@ -524,7 +522,7 @@ sudo adduser $USER wireshark
 
 ### Stacer
 wget https://github.com/oguzhaninan/Stacer/releases/download/v1.0.8/Stacer_1.0.8_amd64.deb
-yes | sudo gdebi Stacer_1.0.8_amd64.deb
+yes "s" | sudo gdebi Stacer_1.0.8_amd64.deb
 
 
 ### QDirStat
@@ -535,7 +533,7 @@ sudo apt install -y qdirstat
 
 ### Master PDF Editor
 wget http://get.code-industry.net/public/master-pdf-editor-4.3.61_qt5.amd64.deb -O master-pdf-editor.deb
-yes | sudo gdebi master-pdf-editor.deb
+yes "s" | sudo gdebi master-pdf-editor.deb
 
 
 ### Calibre
@@ -550,12 +548,12 @@ sudo apt-get install telegram -y
 
 ### Discord
 wget https://dl.discordapp.net/apps/linux/0.0.4/discord-0.0.4.deb
-yes | sudo gdebi discord-0.0.4.deb
+yes "s" | sudo gdebi discord-0.0.4.deb
 
 
 ### TeamViewer
 wget http://download.teamviewer.com/download/teamviewer_i386.deb -O teamviewer.deb
-yes | sudo gdebi teamviewer.deb
+yes "s" | sudo gdebi teamviewer.deb
 
 
 ### Google Drive CLI
